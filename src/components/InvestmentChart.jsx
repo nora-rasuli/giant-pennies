@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +10,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -21,21 +21,27 @@ ChartJS.register(
   Legend
 );
 
-function InvestmentChart({ investmentData, stockSymbol }) {
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
+function InvestmentChart({ investmentData, savingsData }) {
   const dates = investmentData.map((data) => data.date);
-  const values = investmentData.map((data) => data.value);
+  const investmentValues = investmentData.map((data) => data.value);
+  const savingsValues = savingsData.map((data) => data.value);
 
   const data = {
     labels: dates,
     datasets: [
       {
         label: "Investment Value",
-        data: values,
+        data: investmentValues,
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
+        pointRadius: 0, // Remove point markers
+      },
+      {
+        label: "Savings Value",
+        data: savingsValues,
+        borderColor: "rgba(192, 75, 75, 1)",
+        backgroundColor: "rgba(192, 75, 75, 0.2)",
+        pointRadius: 0, // Remove point markers
       },
     ],
   };
@@ -46,39 +52,14 @@ function InvestmentChart({ investmentData, stockSymbol }) {
         beginAtZero: true,
       },
     },
+    elements: {
+      point: {
+        radius: 0, // Remove point markers globally
+      },
+    },
   };
 
-  useEffect(() => {
-    if (chartInstanceRef.current) {
-      chartInstanceRef.current.destroy();
-    }
-
-    const ctx = chartRef.current.getContext("2d");
-    chartInstanceRef.current = new ChartJS(ctx, {
-      type: "line",
-      data,
-      options,
-    });
-
-    return () => {
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.destroy();
-      }
-    };
-  }, [investmentData]);
-
-  return (
-    <div>
-      {investmentData.length > 0 ? (
-        <>
-          <h4 className="text-lg mb-2">{stockSymbol}</h4>
-          <canvas ref={chartRef} />
-        </>
-      ) : (
-        <p>No investment data to display.</p>
-      )}
-    </div>
-  );
+  return <Line data={data} options={options} />;
 }
 
 export default InvestmentChart;
