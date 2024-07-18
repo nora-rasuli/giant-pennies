@@ -34,27 +34,25 @@ function InvestmentChart({ investmentData, savingsData }) {
         data: investmentValues,
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
-        pointRadius: 0, // Remove point markers
+        fill: false,
       },
       {
         label: "Savings Value",
         data: savingsValues,
-        borderColor: "rgba(192, 75, 75, 1)",
-        backgroundColor: "rgba(192, 75, 75, 0.2)",
-        pointRadius: 0, // Remove point markers
+        borderColor: "rgba(255, 99, 132, 1)",
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        fill: false,
       },
     ],
   };
 
   const options = {
     scales: {
-      y: {
+      x: {
         beginAtZero: true,
       },
-    },
-    elements: {
-      point: {
-        radius: 0, // Remove point markers globally
+      y: {
+        beginAtZero: true,
       },
     },
   };

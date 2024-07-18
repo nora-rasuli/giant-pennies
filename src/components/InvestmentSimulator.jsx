@@ -26,13 +26,13 @@ function InvestmentSimulator({ expenses }) {
       const investmentMap = {};
       const savingsMap = {};
 
-      // Initialize investment and savings maps with zero values
+      // Initialize maps with zero values
       dates.forEach((date) => {
         investmentMap[date] = 0;
         savingsMap[date] = 0;
       });
 
-      // Update investment and savings maps with expenses
+      // Update maps with expenses
       expenses.forEach((expense) => {
         const expenseDate = expense.date;
         const stockPriceOnDate = stockData[expenseDate]
@@ -43,7 +43,7 @@ function InvestmentSimulator({ expenses }) {
           if (date >= expenseDate) {
             const stockPrice = parseFloat(stockData[date]["4. close"]);
             investmentMap[date] += shares * stockPrice;
-            savingsMap[date] += expense.amount; // Cumulative savings
+            savingsMap[date] += expense.amount;
           }
         });
       });
