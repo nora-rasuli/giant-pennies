@@ -35,6 +35,7 @@ function InvestmentChart({ investmentData, savingsData }) {
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         fill: false,
+        pointRadius: 0, // Remove point markers
       },
       {
         label: "Savings Value",
@@ -42,6 +43,7 @@ function InvestmentChart({ investmentData, savingsData }) {
         borderColor: "rgba(255, 99, 132, 1)",
         backgroundColor: "rgba(255, 99, 132, 0.2)",
         fill: false,
+        pointRadius: 0, // Remove point markers
       },
     ],
   };
@@ -53,6 +55,12 @@ function InvestmentChart({ investmentData, savingsData }) {
       },
       y: {
         beginAtZero: true,
+      },
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: "Investing in VOO vs Saving in Cash",
       },
     },
   };

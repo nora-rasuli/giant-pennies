@@ -43,7 +43,7 @@ function InvestmentSimulator({ expenses }) {
           if (date >= expenseDate) {
             const stockPrice = parseFloat(stockData[date]["4. close"]);
             investmentMap[date] += shares * stockPrice;
-            savingsMap[date] += expense.amount;
+            savingsMap[date] += parseFloat(expense.amount);
           }
         });
       });

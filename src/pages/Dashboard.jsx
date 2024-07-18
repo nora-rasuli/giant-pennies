@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ExpenseForm from "../components/ExpenseForm";
 import ExpenseChart from "../components/ExpenseChart";
 import InvestmentSimulator from "../components/InvestmentSimulator";
-import Summary from "../components/Summary";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { firestore, auth } from "../services/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -51,9 +50,6 @@ function Dashboard() {
       </div>
       <div className="mt-6">
         <InvestmentSimulator expenses={expenses} />
-      </div>
-      <div className="mt-6">
-        <Summary expenses={expenses} />
       </div>
     </div>
   );
