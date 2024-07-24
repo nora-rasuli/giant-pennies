@@ -71,7 +71,7 @@ function InvestmentSimulator({ expenses }) {
           const startOfBimonthlyPeriod = startOfMonth(
             addMonths(parsedDate, month - parsedDate.getMonth())
           );
-          return format(startOfBimonthlyPeriod, "yyyy-MM-dd");
+          return startOfBimonthlyPeriod;
         };
       } else if (yearsDifference > 5) {
         aggregationFunction = endOfMonth;
@@ -83,13 +83,14 @@ function InvestmentSimulator({ expenses }) {
       const savingsAggregated = {};
 
       filteredDates.forEach((date) => {
-        const aggregatedDate = aggregationFunction(date);
-        if (!investmentAggregated[aggregatedDate]) {
-          investmentAggregated[aggregatedDate] = 0;
-          savingsAggregated[aggregatedDate] = 0;
+        const aggregatedDate = aggregationFunction(parseISO(date));
+        const formattedDate = format(aggregatedDate, "MMM dd yyyy");
+        if (!investmentAggregated[formattedDate]) {
+          investmentAggregated[formattedDate] = 0;
+          savingsAggregated[formattedDate] = 0;
         }
-        investmentAggregated[aggregatedDate] = investmentMap[date];
-        savingsAggregated[aggregatedDate] = savingsMap[date];
+        investmentAggregated[formattedDate] = investmentMap[date];
+        savingsAggregated[formattedDate] = savingsMap[date];
       });
 
       const investmentValues = Object.keys(investmentAggregated).map(

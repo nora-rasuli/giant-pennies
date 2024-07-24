@@ -9,10 +9,7 @@ import {
   Title,
   Tooltip,
   Legend,
-  TimeScale,
 } from "chart.js";
-import "chartjs-adapter-date-fns";
-import { format } from "date-fns";
 
 ChartJS.register(
   CategoryScale,
@@ -21,8 +18,7 @@ ChartJS.register(
   PointElement,
   Title,
   Tooltip,
-  Legend,
-  TimeScale
+  Legend
 );
 
 function InvestmentChart({ investmentData, savingsData }) {
@@ -55,16 +51,7 @@ function InvestmentChart({ investmentData, savingsData }) {
   const options = {
     scales: {
       x: {
-        type: "time",
-        time: {
-          unit: "day",
-          tooltipFormat: "MMM dd, yyyy",
-        },
-        ticks: {
-          callback: function (value) {
-            return format(new Date(value), "MMM dd, yyyy");
-          },
-        },
+        beginAtZero: true,
       },
       y: {
         beginAtZero: true,
