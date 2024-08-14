@@ -17,209 +17,8 @@ body {
 .container {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 10px 40px 40px 40px;
 }
-
-/* Header 
-header {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
-  padding: 40px;
-  text-align: center;
-  border-radius: 0 0 15px 15px;
-  margin-bottom: 50px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-header h1 {
-  margin: 0;
-  font-size: 3.5rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}*/
-/* Header */
-/* header {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
-  padding: 40px;
-  text-align: center;
-  border-radius: 0 0 15px 15px;
-  margin-bottom: 50px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
-  animation: spin 15s linear infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-header h1 {
-  margin: 0;
-  font-size: 3.5rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 1;
-  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
-} */
- /* Header */
-/* header {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
-  padding: 40px;
-  text-align: center;
-  border-radius: 0 0 15px 15px;
-  margin-bottom: 50px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(from 180deg at 50% 50%, rgba(255, 255, 255, 0.15), transparent 75%);
-  animation: rotateBG 10s infinite linear;
-  z-index: -1;
-  transform: translateZ(0);
-}
-
-@keyframes rotateBG {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-header h1 {
-  margin: 0;
-  font-size: 3.5rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  -webkit-background-clip: text;
-  color: transparent;
-  transition: color 0.3s ease;
-}
-
-header h1:hover {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
-}
-
-header h1::after {
-  content: "";
-  display: block;
-  margin: 10px auto;
-  width: 50%;
-  height: 4px;
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  border-radius: 2px;
-  transition: width 0.4s ease;
-}
-
-header h1:hover::after {
-  width: 80%;
-} */
- /* Header */
-/* header {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
-  padding: 40px;
-  text-align: center;
-  border-radius: 0 0 15px 15px;
-  margin-bottom: 50px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
-  transform: translate(-50%, -50%) scale(1);
-  border-radius: 50%;
-  animation: pulse 10s infinite ease-in-out;
-  z-index: -1;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-}
-
-header h1 {
-  margin: 0;
-  font-size: 3.5rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  -webkit-background-clip: text;
-  color: transparent;
-  transition: color 0.3s ease;
-}
-
-header h1:hover {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
-}
-
-header h1::after {
-  content: "";
-  display: block;
-  margin: 10px auto;
-  width: 50%;
-  height: 4px;
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  border-radius: 2px;
-  transition: width 0.4s ease;
-}
-
-header h1:hover::after {
-  width: 80%;
-} */
  /* Header */
 header {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
@@ -227,7 +26,6 @@ header {
   padding: 40px;
   text-align: center;
   border-radius: 0 0 15px 15px;
-  margin-bottom: 50px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
@@ -290,39 +88,39 @@ header:hover .coin {
 }
 
 header:hover .coin:nth-child(1) {
-  left: 10%;
+  right: 10%;
   animation-delay: 0.5s;
 }
 header:hover .coin:nth-child(2) {
-  left: 20%;
+  right: 20%;
   animation-delay: 0.7s;
 }
 header:hover .coin:nth-child(3) {
-  left: 30%;
+  right: 30%;
   animation-delay: 0.3s;
 }
 header:hover .coin:nth-child(4) {
-  left: 40%;
+  right: 40%;
   animation-delay: 1s;
 }
 header:hover .coin:nth-child(5) {
-  left: 50%;
+  right: 50%;
   animation-delay: 0.2s;
 }
 header:hover .coin:nth-child(6) {
-  left: 60%;
+  right: 60%;
   animation-delay: 0.8s;
 }
 header:hover .coin:nth-child(7) {
-  left: 70%;
+  right: 70%;
   animation-delay: 0.4s;
 }
 header:hover .coin:nth-child(8) {
-  left: 80%;
+  right: 80%;
   animation-delay: 1.2s;
 }
 header:hover .coin:nth-child(9) {
-  left: 90%;
+  right: 90%;
   animation-delay: 0.6s;
 }
 /* Summary Section */

@@ -50,12 +50,12 @@ function Header() {
       </div>
       {/* Coins for the raining effect */}
       {[...Array(10)].map((_, i) => (
-        <div
-          key={i}
-          className="coin absolute w-6 h-6 bg-no-repeat bg-center"
-          style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 2}s` }}
-        ></div>
-      ))}
+    <div
+      key={i}
+      className="coin absolute w-8 h-8 bg-no-repeat bg-center"
+      style={{ left: `${Math.random() * 90 + 5}%`, animationDelay: `${Math.random() * 2}s` }}
+    ></div>
+  ))}
     </header>
   );
 }
