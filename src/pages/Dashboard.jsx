@@ -36,8 +36,9 @@ function Dashboard() {
   return (
     <div className="p-4">
       <h2 className="text-2xl mb-4">Dashboard</h2>
+      <div className="form-and-chart">
       <ExpenseForm onSubmit={handleAddExpense} />
-      <div className="mt-6">
+      <div className="expense-chart ">
         <h3 className="text-xl mb-2">Expenses</h3>
         <ExpenseChart expenses={expenses} />
         <ul>
@@ -47,7 +48,7 @@ function Dashboard() {
             </li>
           ))}
         </ul>
-      </div>
+      </div></div>
       <div className="mt-6">
         <InvestmentSimulator expenses={expenses} />
       </div>

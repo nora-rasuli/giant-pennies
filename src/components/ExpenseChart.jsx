@@ -1,38 +1,14 @@
-import React from "react";
-import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-function getRandomColor() {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function ExpenseChart({ expenses }) {
   const expenseData = {};
 
   // Group expenses by date
-  expenses.forEach((expense) => {
+  expenses.forEach(expense => {
     if (!expenseData[expense.date]) {
       expenseData[expense.date] = [];
     }
@@ -44,9 +20,9 @@ function ExpenseChart({ expenses }) {
     return expenseData[date].map((expense, expenseIndex) => {
       return {
         label: `${expense.itemName} on ${date}`,
-        data: labels.map((label) => (label === date ? expense.amount : 0)),
-        backgroundColor: getRandomColor(),
-        borderColor: getRandomColor(),
+        data: labels.map(label => (label === date ? expense.amount : 0)),
+        backgroundColor: `rgba(${(index * 50) % 255}, ${(index * 100) % 255}, ${(index * 150) % 255}, 0.2)`,
+        borderColor: `rgba(${(index * 50) % 255}, ${(index * 100) % 255}, ${(index * 150) % 255}, 1)`,
         borderWidth: 1,
       };
     });
@@ -67,6 +43,8 @@ function ExpenseChart({ expenses }) {
         stacked: true,
       },
     },
+    barThickness: 20, // Set a specific bar thickness
+    maxBarThickness: 30, // Set the maximum bar thickness
   };
 
   return <Bar data={data} options={options} />;

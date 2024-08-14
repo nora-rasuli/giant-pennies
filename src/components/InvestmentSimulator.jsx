@@ -111,7 +111,7 @@ function InvestmentSimulator({ expenses }) {
   }, [expenses, stockData]);
 
   return (
-    <div className="p-4 bg-white rounded shadow-md">
+    <div className="p-4 investment-chart">
       <h3 className="text-xl mb-4">Investment Simulator</h3>
       <InvestmentChart
         investmentData={investmentData}

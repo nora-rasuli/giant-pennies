@@ -22,7 +22,8 @@ function ExpenseForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
+    <form onSubmit={handleSubmit} className="expense-form">
+      <legend className="mb-4">Report an expense:</legend>
       <div className="mb-4">
         <label className="block text-gray-700">Amount</label>
         <input
